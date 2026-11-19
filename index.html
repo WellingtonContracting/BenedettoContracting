@@ -349,6 +349,21 @@ footer p{font-size:0.76rem;font-weight:300;color:var(--light)}
 .ct-dets a{color:#ccc;text-decoration:none}
 .ct-dets a:hover{color:var(--white)}
 .ct-dets .c-det{min-width:160px}
+
+/* Wide & ultrawide screens: keep content in a readable column, let photo bands scale */
+@media(min-width:1600px){
+  :root{--gut:max(64px,calc((100vw - 1440px) / 2))}
+  #hdr,.h-svc,.h-about,.h-contact,.ab-intro,.ab-timeline,.sv-hero,.sv-list,.ct-hero,.ct-body,footer{
+    padding-left:var(--gut);padding-right:var(--gut)
+  }
+  .ab-hero-ov,.ab-vintage-cap{padding-left:var(--gut);padding-right:var(--gut)}
+  .hero{height:clamp(580px,34vw,860px)}
+  .ab-hero{height:clamp(400px,24vw,620px)}
+  .ab-vintage{height:clamp(320px,20vw,520px)}
+  .h-photos{height:clamp(400px,22vw,620px)}
+  .ab-mosaic{padding:0 var(--gut);grid-template-rows:clamp(260px,15vw,380px) clamp(260px,15vw,380px)}
+  .sv-photos{padding:0 var(--gut) 56px;grid-template-rows:clamp(300px,17vw,440px) clamp(300px,17vw,440px)}
+}
 </style>
 </head>
 <body>
